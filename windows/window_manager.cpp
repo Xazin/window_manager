@@ -405,7 +405,7 @@ double WindowManager::GetDpiForHwnd(HWND hWnd) {
 void WindowManager::Dock(const flutter::EncodableMap& args) {
   HWND mainWindow = GetMainWindow();
 
-  double dpi = GetDpiForHwnd(mainWindow);
+  double dpi = (double GetDpiForWindow(mainWindow));
   double scalingFactor = dpi / 96.0;
 
   bool left = std::get<bool>(args.at(flutter::EncodableValue("left")));
